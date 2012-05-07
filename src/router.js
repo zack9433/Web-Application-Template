@@ -14,14 +14,18 @@ define([
   var AppRouter = Backbone.Router.extend({
     routes: {
       // Define some URL routes
-
+      '': 'home'
       // Default
-      '*actions': 'defaultAction'
+      '*notfound': 'pageNotFound'
     },
 
-    defaultAction: function(actions){
+    pageNotFound: function(actions){
       // console.log('No route:', actions);
       // Display the main page.
+    },
+
+    home: function( ) {
+
     }
   });
 

@@ -12,12 +12,17 @@ define([
   'router' // Request router.js
 ], function($, _, Backbone, Router){
 
+  var MyApp = {};
+
   var initialize = function(){
     // Pass in our Router module and call it's initialize function
     Router.initialize();
   }
 
-  return {
-    initialize: initialize
-  };
+  // Event aggregator at application level
+  MyApp.vent = _.extend( {}, Backbone.Events );
+  MyApp.initialize = initialize;
+  window.MyApp = MyApp;
+
+  return MyApp;
 });

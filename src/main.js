@@ -8,12 +8,11 @@
 require.config({
   paths: {
     jquery: '../assets/js/jquery/jquery-1.7.2.min',
-    underscore: 'underscore-load',
-    backbone: 'backbone-load',
-    order: '../assets/js/require/plugin/order',
-    text: '../assets/js/require/plugin/text',
+    underscore: '../assets/js/underscore/underscore-min',
+    backbone: '../assets/js/backbone/backbone-min',
     tpl: '../assets/js/require/plugin/tpl',
     domReady: '../assets/js/require/plugin/domReady',
+    baseView: '../src/views/baseView',
     templates: 'templates'
   }
 });
@@ -23,11 +22,7 @@ require([
   // Load our app module and pass it to our definition function
   'app',
   'domReady',
-  '../assets/js/jquery/jquery-1.7.2.min',
-  // Some plugins have to be loaded in order due to there non AMD compliance
-  // Because these scripts are not "modules" they do not pass any values to the definition function below
-  'order!../assets/js/underscore/underscore-min',
-  'order!../assets/js/backbone/backbone-min'
+  'jquery'
 
 ], function(App, domReady){
   //This function is called once the DOM is ready.
